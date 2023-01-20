@@ -1,3 +1,9 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
 # Compiled class file
 *.class
 
@@ -6,6 +12,16 @@
 
 # BlueJ files
 *.ctxt
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
