@@ -1,45 +1,64 @@
 package br.com.imagemfilmes.desafio.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Embedded;
+
+import javax.annotation.processing.Generated;
+import java.util.Objects;
+
 public class PedidoItem {
+
+    @Id
     private long id;
     private Produto produto;
     private int quantidade;
     private Pedido pedido;
 
+    public PedidoItem() {
+
+    }
+    public PedidoItem(long id, Produto produto, int quantidade) {
+        this.id = id;
+        this.produto = produto;
+        this.quantidade = quantidade;
+    }
     public long getId() {
+
         return id;
     }
 
-    public PedidoItem setId(long id) {
+    public void setId(long id) {
+
         this.id = id;
-        return this;
     }
 
     public Produto getProduto() {
+
         return produto;
     }
 
-    public PedidoItem setProduto(Produto produto) {
+    public void setProduto(Produto produto) {
+
         this.produto = produto;
-        return this;
     }
 
     public int getQuantidade() {
+
         return quantidade;
     }
 
-    public PedidoItem setQuantidade(int quantidade) {
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
-        return this;
     }
 
     public Pedido getPedido() {
+
         return pedido;
     }
 
-    public PedidoItem setPedido(Pedido pedido) {
+    public void setPedido(Pedido pedido) {
+
         this.pedido = pedido;
-        return this;
     }
 
     @Override
@@ -50,5 +69,17 @@ public class PedidoItem {
                 ", quantidade=" + quantidade +
                 ", pedido=" + pedido +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PedidoItem that)) return false;
+        return getId() == that.getId() && getQuantidade() == that.getQuantidade() && Objects.equals(getProduto(), that.getProduto()) && Objects.equals(getPedido(), that.getPedido());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getProduto(), getQuantidade(), getPedido());
     }
 }
