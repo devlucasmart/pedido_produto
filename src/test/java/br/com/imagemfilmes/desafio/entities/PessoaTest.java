@@ -1,4 +1,4 @@
-package br.com.imagemfilmes.desafio.entity;
+package br.com.imagemfilmes.desafio.entities;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
